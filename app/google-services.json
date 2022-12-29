@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209815784042",
+    "project_id": "teluclothes-db",
+    "storage_bucket": "teluclothes-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209815784042:android:bb89b96f06670cef25d813",
+        "android_client_info": {
+          "package_name": "com.example.fe_impal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209815784042-n137cr5alm64oqpb4e6itho1mil136bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBULLzD1m3X2q7hKW1yFU1JRdVgCbQ7GWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209815784042-n137cr5alm64oqpb4e6itho1mil136bh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
