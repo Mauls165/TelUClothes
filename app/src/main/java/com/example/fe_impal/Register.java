@@ -30,7 +30,7 @@ public class Register extends AppCompatActivity {
     Button register;
     TextView login;
     ImageView back;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class Register extends AppCompatActivity {
         login = findViewById(R.id.login);
         back = findViewById(R.id.backrow);
 
+        database = FirebaseDatabase.getInstance();
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,12 +68,10 @@ public class Register extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 registrasi();
             }
         });
-
-
-
     }
 
     private void registrasi() {
@@ -95,12 +94,14 @@ public class Register extends AppCompatActivity {
         }
         if(getconf.equals(getpass)){
             ModelUser modeluser = new ModelUser(getemail, getusername, getpass);
-            database.child("User").setValue(modeluser);
             mAuth.createUserWithEmailAndPassword(getemail,getpass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                ModelUser modeluser = new ModelUser(getemail, getusername, getpass);
+                                String id = task.getResult().getUser().getUid();
+                                database.getReference().child("User").child(id).setValue(modeluser);
                                 // Sign in success, update UI with the signed-in user's information
                                 Toast.makeText(Register.this, "Registrasi berhasil", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(Register.this, Login.class));

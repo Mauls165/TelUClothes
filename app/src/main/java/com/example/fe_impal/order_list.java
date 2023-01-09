@@ -19,6 +19,7 @@ public class order_list extends AppCompatActivity {
         setContentView(R.layout.activity_order_list);
 
         btnback = findViewById(R.id.backrow);
+        addtochart = findViewById(R.id.addtochartbtn);
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,14 @@ public class order_list extends AppCompatActivity {
                 Intent intent = new Intent(order_list.this, Home.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        addtochart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(order_list.this, CartActivity.class);
+                startActivity(intent);
             }
         });
     }

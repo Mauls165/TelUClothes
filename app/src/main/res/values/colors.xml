@@ -10,4 +10,5 @@
     <color name="primary_col">#CE1567</color>
     <color name="grey_font">#595757</color>
     <color name="secondary_col">#F3F3F3</color>
+    <color name="grey_box">#F2F2F2</color>
 </resources>
